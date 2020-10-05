@@ -10,6 +10,7 @@ import DemocondistionalAndState from './Components/DemoLogin/DemocondistionalAnd
 import BaiTapChonMauXe from './BaiTapChonMauXe';
 import DemoListAndKey from "./ListAndKeys/demoListAndKey";
 import DemoProps from './Props/DemoProps';
+import BaiTapGioHang from './Components/BaiTapGioHang';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       {/* <DemocondistionalAndState/> */}
       {/* <BaiTapChonMauXe/> */}
       {/* <DemoListAndKey /> */}
-      <DemoProps/>
+      {/* <DemoProps/> */}
+      <BaiTapGioHang/>
     </div>
   );
 }

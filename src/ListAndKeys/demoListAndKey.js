@@ -5,7 +5,7 @@ export default class DemoListAndKey extends Component {
     
     renderDanhSachKhoaHoc = () =>{
         return this.danhSachKhoaHoc.map((khoaHoc,index)=>{
-        return <li>{khoaHoc}</li>
+        return <li key={index}>{khoaHoc}</li>
         });
     }
     
