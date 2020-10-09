@@ -72,8 +72,61 @@ export default class BaiTapGioHang extends Component {
 
         })
         
-    }
+	}
+	
+	// delete
+	deleteItem = (maSP)=>{
+		// xử lý giỏ hàng
+		console.log(maSP);
+		let gioHangUpdate = [...this.state.cardList];
+		const indexSP = this.state.cardList.findIndex(spGH => spGH.maSP === maSP);
+		if(indexSP !=1){
+			gioHangUpdate.splice(indexSP,1);
+		}
 
+		// set lại state giỏ hàng
+		this.setState({
+			cardList:gioHangUpdate,
+		})
+
+
+	}
+	tangGiamSoLuong = (maSP,tangGiam)=>{//true->tăng else false
+		// tim nút + -
+		console.log('maSP',maSP);
+		console.log('Tanggiam',tangGiam);
+		let gioHangUpdate = [...this.state.cardList];
+		// const index = this.state.cardList.findIndex((spGH)=>{
+        //     return spGH.maSP === maSP;
+		// });
+		let spGH = gioHangUpdate.find(sp => sp.maSP === maSP);
+		if(spGH){
+			console.log(spGH);
+			if(tangGiam){
+				spGH.soLuong += 1;
+			} else{
+				if(spGH.soLuong<=1){
+					return
+				}else{
+					spGH.soLuong -= 1;
+				}
+			}
+		}
+
+		// set state lại
+		this.setState({
+			cardList: gioHangUpdate,
+		})
+	
+	}
+	tongSoLuong = ()=>{
+		let tongSoLuong = this.state.cardList.reduce((soLuong,spGH,index)=>{return soLuong += spGH.soLuong},0)
+		return tongSoLuong;
+	}
+	tongTien = ()=>{
+		let tongTien = this.state.cardList.reduce((tongTien,spGH,index)=>{return tongTien += spGH.soLuong*spGH.giaBan},0)
+		return tongTien;
+	}
 
 
 	render() {
@@ -87,7 +140,7 @@ export default class BaiTapGioHang extends Component {
 							data-toggle="modal"
 							data-target="#modelId"
 						>
-							Giỏ hàng (0)
+							Giỏ hàng ({this.tongSoLuong()} - {this.tongTien().toLocaleString()})
 						</button>
 					</div>
 					<div className="container danh-sach-san-pham">
@@ -95,7 +148,10 @@ export default class BaiTapGioHang extends Component {
 							{this.renderDanhSachSanPham()}
 						</div>
 					</div>
-					<Modal cardList = {this.state.cardList}/>
+					<Modal cardList = {this.state.cardList}
+							deleteItem={this.deleteItem}
+							tangGiamSoLuong={this.tangGiamSoLuong}
+					/>
 
 					<div className="row">
 						<div className="col-sm-5">

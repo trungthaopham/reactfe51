@@ -5,9 +5,10 @@ export default class Modal extends Component {
 
     renderCartList = ()=>{
         return this.props.cardList.map((card,index)=>{
-            return <CardItem key={index} card={card}/>;
+            return <CardItem key={index} card={card} deleteItem={this.props.deleteItem} tangGiamSoLuong={this.props.tangGiamSoLuong}/>;
         })
-    }
+	}
+	
 
     render() {
         return (

@@ -11,6 +11,7 @@ import BaiTapChonMauXe from './BaiTapChonMauXe';
 import DemoListAndKey from "./ListAndKeys/demoListAndKey";
 import DemoProps from './Props/DemoProps';
 import BaiTapGioHang from './Components/BaiTapGioHang';
+import BaiTapGioHangRedux from './BaiTapRedux/BaiTapGioHangRedux';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
       {/* <BaiTapChonMauXe/> */}
       {/* <DemoListAndKey /> */}
       {/* <DemoProps/> */}
-      <BaiTapGioHang/>
+      {/* <BaiTapGioHang/> */}
+      <BaiTapGioHangRedux/>
     </div>
   );
 }

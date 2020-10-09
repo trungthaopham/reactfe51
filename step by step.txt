@@ -1,0 +1,6 @@
+- Xây dựng giao diện
+- Xác định nguồn dữ liệu thay đổi trên giao diện => Tổ chức lưu trữ (mãng, biến)
+- Xác định nơi lưu trữ (State)
+	+ Chứa giao diện binding dữ liệu đó ra(Trực tiếp hoặc gián tiếp)
+	+ Chứa nút xử lý làm thay đổi (setstate)
+- Xử lý chức năng
