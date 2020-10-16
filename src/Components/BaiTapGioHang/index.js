@@ -93,8 +93,8 @@ export default class BaiTapGioHang extends Component {
 	}
 	tangGiamSoLuong = (maSP,tangGiam)=>{//true->tăng else false
 		// tim nút + -
-		console.log('maSP',maSP);
-		console.log('Tanggiam',tangGiam);
+		// console.log('maSP',maSP);
+		// console.log('Tanggiam',tangGiam);
 		let gioHangUpdate = [...this.state.cardList];
 		// const index = this.state.cardList.findIndex((spGH)=>{
         //     return spGH.maSP === maSP;
