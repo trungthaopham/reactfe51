@@ -14,7 +14,7 @@ const stateDefault = {
 const BaiTapGameXucXacReducer = (state = stateDefault,action) => {
     switch(action.type){
         case 'DAT_CUOC':{
-            state.banChon=action.taiXiu;
+            state.banChon = action.taiXiu;
             return {...state};
         }
         case 'RANDOM_XUC_XAC':{
